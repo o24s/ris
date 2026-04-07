@@ -1,0 +1,29 @@
+[package]
+name = "ris"
+version = "0.1.0"
+edition = "2024"
+authors = ["o24s <fulmlumo@gmail.com>"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+description = "Rust implementation of the longest Increasing Subsequences and other monotonic sequences in O(N log N) time."
+homepage = "https://github.com/o24s/ris"
+repository = "https://github.com/o24s/ris"
+keywords = ["lis", "algorithm", "diff", "no_std"]
+categories = ["algorithms", "no-std"]
+
+[dependencies]
+rustc-hash = { version = "2.1.2", optional = true }
+
+[dev-dependencies]
+criterion = "0.8.2"
+rand = "0.10.0"
+longest-increasing-subsequence = "0.1.0"
+lis = "1.0.0"
+
+[features]
+default = []
+diff = ["dep:rustc-hash"]
+
+[[bench]]
+name = "lis_bench"
+harness = false
